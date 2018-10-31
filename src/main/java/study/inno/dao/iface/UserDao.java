@@ -5,13 +5,13 @@ import study.inno.pojo.User;
 import java.util.Set;
 
 public interface UserDao {
-    public Set<User> getAllUsers();
+     Set<User> getAllUsers();
 
-    public User getByName(String name);
+     User getByName(String name);
 
-    public void updateByName(User user);
+     void updateByName(User user);
 
-    public void deleteByName(User user);
+     void deleteByName(User user);
 
-    public void add(User user);
+     void add(User user);
 }

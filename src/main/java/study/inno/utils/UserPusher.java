@@ -5,8 +5,8 @@ import study.inno.dao.AddressDaoImpl;
 import study.inno.dao.iface.AddressDao;
 import study.inno.pojo.User;
 
-import static study.inno.utils.Customizer.obj2Str;
-import static study.inno.utils.Customizer.str2IntDef;
+import static study.inno.utils.Caster.obj2Str;
+import static study.inno.utils.Caster.str2IntDef;
 
 public class UserPusher {
     private static final AddressDao addressDao = new AddressDaoImpl();

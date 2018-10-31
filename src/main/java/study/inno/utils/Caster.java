@@ -1,8 +1,10 @@
 package study.inno.utils;
 
-public class Customizer {
+import org.apache.log4j.Logger;
 
-    private Customizer() {
+public class Caster {
+
+    private Caster() {
     }
 
     public static int str2IntDef(Object src, int def) {
@@ -10,7 +12,7 @@ public class Customizer {
         else try {
             return Integer.parseInt(src.toString());
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            Logger.getLogger(Caster.class).error(e.getMessage(), e);
         }
         return def;
     }

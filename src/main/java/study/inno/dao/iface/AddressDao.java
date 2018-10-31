@@ -5,13 +5,13 @@ import study.inno.pojo.Address;
 import java.util.Set;
 
 public interface AddressDao {
-    public Set<Address> getAllAddresses();
+     Set<Address> getAllAddresses();
 
-    public Address getById(String id);
+     Address getById(String id);
 
-    public void updateById(Address address);
+     void updateById(Address address);
 
-    public void deleteById(Address address);
+     void deleteById(Address address);
 
-    public void add(Address address);
+     void add(Address address);
 }

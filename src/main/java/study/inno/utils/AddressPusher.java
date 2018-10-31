@@ -3,8 +3,8 @@ package study.inno.utils;
 import com.mongodb.DBObject;
 import study.inno.pojo.Address;
 
-import static study.inno.utils.Customizer.obj2Str;
-import static study.inno.utils.Customizer.str2IntDef;
+import static study.inno.utils.Caster.obj2Str;
+import static study.inno.utils.Caster.str2IntDef;
 
 public class AddressPusher {
     public Address push(DBObject src) {
