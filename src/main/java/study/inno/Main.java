@@ -2,7 +2,7 @@ package study.inno;
 
 import com.mongodb.MongoClient;
 import study.inno.dao.UserDaoImpl;
-import study.inno.dto.User;
+import study.inno.pojo.User;
 
 import java.net.UnknownHostException;
 
@@ -47,7 +47,7 @@ public class Main {
 //        userDao.add(new User("Andrey3", "query", 13, null));
 
         System.out.println("%n%nUpd user with name: Andrey3");
-        userDao.updateByName(new User("Andrey3", "quertyui", 15, null));
+        userDao.updateByName(new User("Andrey3", "querty", 15, null));
 
         System.out.println("%n%nSelect all users");
         for (User user : userDao.getAllUsers()) {

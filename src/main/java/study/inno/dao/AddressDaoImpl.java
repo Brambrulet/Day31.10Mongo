@@ -5,7 +5,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import study.inno.dao.connection_manager.ConnectionManagerImpl;
 import study.inno.dao.iface.AddressDao;
-import study.inno.dto.Address;
+import study.inno.pojo.Address;
 import study.inno.utils.AddressPusher;
 
 import java.util.HashSet;

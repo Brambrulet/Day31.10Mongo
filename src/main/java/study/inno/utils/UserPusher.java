@@ -3,7 +3,7 @@ package study.inno.utils;
 import com.mongodb.DBObject;
 import study.inno.dao.AddressDaoImpl;
 import study.inno.dao.iface.AddressDao;
-import study.inno.dto.User;
+import study.inno.pojo.User;
 
 import static study.inno.utils.Customizer.obj2Str;
 import static study.inno.utils.Customizer.str2IntDef;

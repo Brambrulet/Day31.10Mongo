@@ -1,6 +1,6 @@
 package study.inno.dao.iface;
 
-import study.inno.dto.User;
+import study.inno.pojo.User;
 
 import java.util.Set;
 

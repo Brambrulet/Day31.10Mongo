@@ -5,7 +5,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import study.inno.dao.connection_manager.ConnectionManagerImpl;
 import study.inno.dao.iface.UserDao;
-import study.inno.dto.User;
+import study.inno.pojo.User;
 import study.inno.utils.UserPusher;
 
 import java.util.HashSet;

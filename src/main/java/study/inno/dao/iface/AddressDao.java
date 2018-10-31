@@ -1,6 +1,6 @@
 package study.inno.dao.iface;
 
-import study.inno.dto.Address;
+import study.inno.pojo.Address;
 
 import java.util.Set;
 

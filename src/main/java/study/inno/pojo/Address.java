@@ -1,4 +1,4 @@
-package study.inno.dto;
+package study.inno.pojo;
 
 public class Address {
     private String id;
