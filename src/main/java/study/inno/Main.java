@@ -2,6 +2,7 @@ package study.inno;
 
 import org.apache.log4j.Logger;
 import study.inno.dao.UserDaoImpl;
+import study.inno.pojo.Address;
 import study.inno.pojo.User;
 
 public class Main {
@@ -9,17 +10,33 @@ public class Main {
 
     public static void main(String[] args) {
         UserDaoImpl userDao = new UserDaoImpl();
+        User andrew = new User("Andrew", "query", 13, new Address("Москва", "Новый Арбат", 13));
 
-        LOGGER.info("%n%nFind user with name: tom");
+        LOGGER.info("Find user with name: tom");
         LOGGER.info(userDao.getByName("tom").toString());
 
-//        LOGGER.info("%n%nAdd user with name: Andrey");
-//        userDao.add(new User("Andrey3", "query", 13, null));
+        LOGGER.info("Add user");
+        userDao.add(andrew);
+        LOGGER.info(userDao.getByName(andrew.getName()).toString());
 
-        LOGGER.info("%n%nUpd user with name: Andrey3");
-        userDao.updateByName(new User("Andrey3", "qwerty", 15, null));
+        LOGGER.info("Upd user");
+        andrew.setPassword("qwerty");
+        andrew.setAge(15);
+        andrew.getAddress().setCity("Оренбург");
+        andrew.getAddress().setStreet("Терешковой");
+        andrew.getAddress().setHouse(121);
+        userDao.updateByName(andrew);
+        LOGGER.info(userDao.getByName(andrew.getName()).toString());
 
-        LOGGER.info("%n%nSelect all users");
+        LOGGER.info("Select all users");
+        for (User user : userDao.getAllUsers()) {
+            LOGGER.info(user.toString());
+        }
+
+        LOGGER.info("Del user");
+        userDao.deleteByName(andrew);
+
+        LOGGER.info("Select all users");
         for (User user : userDao.getAllUsers()) {
             LOGGER.info(user.toString());
         }

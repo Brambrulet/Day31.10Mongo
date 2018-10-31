@@ -1,7 +1,6 @@
 package study.inno.pojo;
 
 public class Address {
-    private String id;
     private String city;
     private String street;
     private int house;
@@ -9,23 +8,10 @@ public class Address {
     public Address() {
     }
 
-    public Address(String id, String city, String street, int house) {
-        this(city, street, house);
-        this.id = id;
-    }
-
     public Address(String city, String street, int house) {
         this.city = city;
         this.street = street;
         this.house = house;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getCity() {
@@ -55,7 +41,6 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "id='" + id + '\'' +
                 ", city='" + city + '\'' +
                 ", street='" + street + '\'' +
                 ", house=" + house +

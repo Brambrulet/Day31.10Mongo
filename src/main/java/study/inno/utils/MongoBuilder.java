@@ -12,32 +12,38 @@ public class MongoBuilder {
     }
 
     public static DBObject buildUpdate(User user) {
-        return new BasicDBObject("$set", new BasicDBObject().
-                append("name", user.getName()).
-                append("password", user.getPassword()).
-                append("age", user.getAge()).
-                append("address", user.getAddress() == null ? null : user.getAddress().getId()));
+        return user == null ?
+                null :
+                new BasicDBObject("$set", new BasicDBObject().
+                        append("name", user.getName()).
+                        append("password", user.getPassword()).
+                        append("age", user.getAge()).
+                        append("address", buildUpdate(user.getAddress())));
     }
 
     public static DBObject buildUpdate(Address address) {
-        return new BasicDBObject("$set", new BasicDBObject().
-                append("city", address.getCity()).
-                append("street", address.getStreet()).
-                append("house", address.getHouse()));
+        return address == null ?
+                null :
+                new BasicDBObject("city", address.getCity()).
+                        append("street", address.getStreet()).
+                        append("house", address.getHouse());
     }
 
     public static BasicDBObject buildInsert(User user) {
-        return new BasicDBObject("_id", new ObjectId()).
-                append("name", user.getName()).
-                append("password", user.getPassword()).
-                append("age", user.getAge()).
-                append("address", user.getAddress() == null ? null : user.getAddress().getId());
+        return user == null ?
+                null :
+                new BasicDBObject("_id", new ObjectId()).
+                        append("name", user.getName()).
+                        append("password", user.getPassword()).
+                        append("age", user.getAge()).
+                        append("address", buildInsert(user.getAddress()));
     }
 
     public static BasicDBObject buildInsert(Address address) {
-        return new BasicDBObject("_id", new ObjectId()).
-                append("city", address.getCity()).
-                append("street", address.getStreet()).
-                append("house", address.getHouse());
+        return address == null ?
+                null :
+                new BasicDBObject("city", address.getCity()).
+                        append("street", address.getStreet()).
+                        append("house", address.getHouse());
     }
 }

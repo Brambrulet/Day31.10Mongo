@@ -15,14 +15,13 @@ import static study.inno.utils.MongoBuilder.buildInsert;
 import static study.inno.utils.MongoBuilder.buildUpdate;
 
 public class UserDaoImpl implements UserDao {
-    private static final UserPusher PUSHER = new UserPusher();
     private static final DBCollection TABLE = ConnectionManagerImpl.getInstance().getCollection("users");
 
     @Override
     public Set<User> getAllUsers() {
         Set<User> result = new HashSet<>();
         for (DBObject obj : TABLE.find()) {
-            result.add(PUSHER.push(obj));
+            result.add(UserPusher.push(obj));
         }
 
         return result;
@@ -30,12 +29,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getByName(String name) {
-        return PUSHER.push(TABLE.findOne(new BasicDBObject("name", name)));
+        return UserPusher.push(TABLE.findOne(new BasicDBObject("name", name)));
     }
 
     @Override
     public void updateByName(User user) {
-        //не обновляет объект адреса
         TABLE.findAndModify(new BasicDBObject("name", user.getName()), buildUpdate(user));
     }
 
