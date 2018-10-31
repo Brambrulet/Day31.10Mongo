@@ -5,7 +5,7 @@ public class Customizer {
     private Customizer() {
     }
 
-    public static int Str2IntDef(Object src, int def) {
+    public static int str2IntDef(Object src, int def) {
         if (src == null) return def;
         else try {
             return Integer.parseInt(src.toString());
@@ -15,7 +15,7 @@ public class Customizer {
         return def;
     }
 
-    public static String Obj2Str(Object obj) {
+    public static String obj2Str(Object obj) {
         if (obj == null) return "";
         else return obj.toString();
     }
